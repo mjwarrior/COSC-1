@@ -1,16 +1,65 @@
+#include <iomanip>
 #include <iostream>
+#include <string>
+using namespace std;
 
-// TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+/*
+ * Author: Marc Streeter
+ * Date: 02/07/2025
+ * Time: 1:35 am
+ Objective Completed: Creat C++ program that collects and displays an academic
+ profile.
+
+
+ */
+
 int main() {
-    // TIP Press <shortcut actionId="RenameElement"/> when your caret is at the <b>lang</b> variable name to see how CLion can help you rename it.
-    auto lang = "C++";
-    std::cout << "Hellol welcome to " << lang << "!\n";
+  string fullName;
+  string placeOfBirth;
+  string major;
+  string sumHeader = "Academic Profile Summary";
 
-    for (int i = 1; i <= 5; i++) {
-        // TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        std::cout << "i = " << i << std::endl;
-    }
+  double age;
+  double gpa;
 
-    return 0;
-    // TIP See CLion help at <a href="https://www.jetbrains.com/help/clion/">jetbrains.com/help/clion/</a>. Also, you can try interactive lessons for CLion by selecting 'Help | Learn IDE Features' from the main menu.
+  cout << "/////////////////////////////////////////////////////////" << endl
+       << "      Welcome to your Academic Profile Generator!" << endl
+       << "   Please answer the following for a complete profile!" << endl
+       << "/////////////////////////////////////////////////////////" << endl;
+
+  cout << "Please enter your full name: ";
+  getline(cin, fullName);
+
+  cout << "Enter your age: ";
+  cin >> age;
+  cin.ignore();
+
+  cout << "Enter your place of birth: ";
+  getline(cin, placeOfBirth);
+
+  cout << "Enter your GPA: ";
+  cin >> gpa;
+  cin.ignore();
+
+  cout << "Enter your current major: ";
+  getline(cin, major);
+
+  cout << "Press enter to proceed....  ";
+  cin.get();
+
+  cout << "##### Academic Profile Summary #####" << endl;
+
+  cout << left << setfill('-') << setw(20) << "Age" << "> " << fixed
+       << setprecision(0) << age << endl;
+
+  cout << left << setfill('-') << setw(20) << "Place of Birth" << "> "
+       << placeOfBirth << endl;
+
+  cout << left << setfill('-') << setw(20) << "GPA" << "> " << showpoint
+       << fixed << setprecision(2) << gpa << endl;
+
+  cout << left << setfill('-') << setw(20) << "Current Major" << "> " << major
+       << endl;
+
+  return 0;
 }
