@@ -19,6 +19,8 @@ int main() {
   string major;
   string sumHeader = "Academic Profile Summary";
 
+  /*instead of using an int for age a double was used to combat an error
+  that would happen if the user typed in a decimal. */
   double age;
   double gpa;
 
@@ -49,6 +51,10 @@ int main() {
 
   cout << "##### Academic Profile Summary #####" << endl;
 
+  /*setting the set precision to 0
+   made every age an int to the user
+   but to the computer it was still a decimal.*/
+
   cout << left << setfill('-') << setw(20) << "Age" << "> " << fixed
        << setprecision(0) << age << endl;
 
@@ -60,6 +66,8 @@ int main() {
 
   cout << left << setfill('-') << setw(20) << "Current Major" << "> " << major
        << endl;
+
+  cout << "Thank you for your participation.";
 
   return 0;
 }
